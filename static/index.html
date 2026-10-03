@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SponsorFlow — NIT Hamirpur outreach</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">✦</span><span>SponsorFlow</span></div>
+        <div class="workspace"><span class="avatar">N</span><span>NIT Hamirpur</span><span class="chevron">⌄</span></div>
+        <nav>
+          <button class="nav-item active" data-section="overview"><span>◈</span>Overview</button>
+          <button class="nav-item" data-section="leads"><span>◎</span>Leads <b id="nav-lead-count">0</b></button>
+          <button class="nav-item" data-section="drafts"><span>□</span>Outreach drafts <b id="nav-draft-count">0</b></button>
+          <button class="nav-item" data-section="activity"><span>↗</span>Activity</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="agent-status"><span class="pulse"></span><div><strong>Agents online</strong><small>2 ready to work</small></div></div>
+          <button class="reset-link" id="reset-btn">Reset demo data</button>
+        </div>
+      </aside>
+      <main class="main">
+        <header class="topbar"><div><span class="eyebrow">HACKTOBERFEST × ISTE-NITH</span><h1>Sponsor outreach workspace</h1></div><div class="mode-pill"><span class="dot"></span><span id="mode">RUNNING MODE</span></div></header>
+        <section class="festival-banner"><div class="festival-stamp">HF<br><small>2026</small></div><div class="festival-copy"><span class="eyebrow">MLH FALL 2026 · NIT HAMIRPUR</span><h2>AI belongs to everyone.</h2><p>Build the partner network for Hacktoberfest Hack Day — 11 October 2026, 400+ student developers, one community.</p></div><div class="festival-flag">OPEN<br>SOURCE<br>FOR ALL</div></section>
+        <section class="brief"><div class="brief-icon">✧</div><div><strong>Event brief</strong><p id="event-brief"></p></div><button class="icon-button" title="Event brief is configured in app.py">⋯</button></section>
+        <section class="metrics">
+          <div class="metric"><span class="metric-label">Total leads</span><strong id="stat-leads">0</strong><small>in workspace</small></div>
+          <div class="metric"><span class="metric-label">Qualified</span><strong id="stat-qualified">0</strong><small>60+ fit score</small></div>
+          <div class="metric"><span class="metric-label">Drafts to review</span><strong id="stat-drafts">0</strong><small>awaiting approval</small></div>
+          <div class="metric"><span class="metric-label">Contacted</span><strong id="stat-contacted">0</strong><small>this campaign</small></div>
+        </section>
+        <section class="panel">
+          <div class="panel-header"><div><h2>Lead pipeline</h2><p>Find and qualify companies that can help the event.</p></div><button class="primary" id="find-btn"><span>✦</span> Run lead finder</button></div>
+          <div class="toolbar"><div class="tabs"><button class="tab active" data-filter="all">All leads</button><button class="tab" data-filter="review">Needs review</button><button class="tab" data-filter="contacted">Contacted</button></div><span class="selection-note" id="selection-note">0 selected</span><button class="secondary" id="draft-btn" disabled>Create outreach drafts</button></div>
+          <div class="table-wrap"><table><thead><tr><th class="check-col"><input type="checkbox" id="select-all"></th><th>Company</th><th>Contact</th><th>Fit</th><th>Why it fits</th><th>Status</th></tr></thead><tbody id="leads-body"></tbody></table></div>
+        </section>
+        <section class="lower-grid">
+          <div class="panel"><div class="panel-header compact"><div><h2>Outreach drafts</h2><p>Review before anything is sent.</p></div><button class="text-button" data-section="drafts">View all →</button></div><div id="drafts-list" class="draft-list"></div></div>
+          <div class="panel"><div class="panel-header compact"><div><h2>Recent activity</h2><p>A transparent audit trail.</p></div><button class="text-button" data-section="activity">View all →</button></div><div id="activity-list" class="activity-list"></div></div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="activity-modal" class="modal-backdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title">
+        <button class="modal-close" id="activity-modal-close" aria-label="Close">×</button>
+        <span class="eyebrow">ACTIVITY DETAILS</span>
+        <h2 id="activity-modal-title">Activity</h2>
+        <p id="activity-modal-meta" class="draft-meta"></p>
+        <div id="activity-modal-summary" class="modal-summary"></div>
+        <pre id="activity-modal-details" class="message-preview"></pre>
+      </section>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
